@@ -27,33 +27,11 @@ public class ValidationService {
 	private SchemaValidator schemaValidator;
 	private Map<Class<?>, SchemaParser> schemaParserMap = new HashMap<>();
 	
-//	@Autowired
-//	private AccountRepository accountRepository;
 	
 	public ValidationService() throws IOException {
-//		schemaParserMap.put(AccountDto.class, new SchemaParser(Resources.toString(Resources.getResource("schema/CreateAccount.json"), Charset.defaultCharset())));
-//		schemaParserMap.put(TransferDto.class, new SchemaParser(Resources.toString(Resources.getResource("schema/TransferAmount.json"), Charset.defaultCharset())));
 		schemaValidator = new SchemaValidator();
 	}
 
-	/**
-	 * Validate create account details.
-	 * @param accountDto
-	 */
-//	public void validateCreateAccount(final AccountDto accountDto) {
-//		validateSchema(schemaParserMap.get(accountDto.getClass()), accountDto);
-//		validateUniqueAccount(accountDto);
-//	}
-	
-	/**
-	 * This method checks if account already exists or not.
-	 * @param accountDto
-	 */
-//	private void validateUniqueAccount(final AccountDto accountDto) {
-//		if(null != accountRepository.findOne(accountDto.getAccountName())) {
-//			throw new ValidationException("accountName", "Account already exists with same details", ErrorCodeConstants.BV_ACCOUNT_AlREADY_EXISTS);
-//		}
-//	}
 
 	/**
 	 * 
@@ -69,13 +47,4 @@ public class ValidationService {
 			throw new SchemaValidationException(validationErrorDetails);
 		}
 	}
-
-	/**
-	 * Validate 
-	 * @param TransferDTO: Data transfer object used to get details of transfer.  
-	 */
-//	public void validateTransferAmount(TransferDto transferDto) {
-//		validateSchema(schemaParserMap.get(transferDto.getClass()), transferDto);
-//	}
-
 }
